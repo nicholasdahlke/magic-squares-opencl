@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/squares.dir/main.cpp.o  -o squares  -lpthread /usr/lib/x86_64-linux-gnu/libOpenCL.so 

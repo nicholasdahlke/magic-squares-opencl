@@ -1,0 +1,7 @@
+/home/nicholas/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/nicholas/CLionProjects/untitled
+-- Looking for CL_VERSION_2_2
+-- Looking for CL_VERSION_2_2 - found
+-- Found OpenCL: /usr/lib/x86_64-linux-gnu/libOpenCL.so (found version "2.2") 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/nicholas/CLionProjects/untitled/cmake-build-debug

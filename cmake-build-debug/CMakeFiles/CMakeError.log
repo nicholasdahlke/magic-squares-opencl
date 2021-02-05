@@ -1,0 +1,60 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/nicholas/CLionProjects/untitled/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4bdc6/fast && /usr/bin/make  -f CMakeFiles/cmTC_4bdc6.dir/build.make CMakeFiles/cmTC_4bdc6.dir/build
+make[1]: Verzeichnis „/home/nicholas/CLionProjects/untitled/cmake-build-debug/CMakeFiles/CMakeTmp“ wird betreten
+Building C object CMakeFiles/cmTC_4bdc6.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_4bdc6.dir/src.c.o   -c /home/nicholas/CLionProjects/untitled/cmake-build-debug/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_4bdc6
+/home/nicholas/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4bdc6.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_4bdc6.dir/src.c.o  -o cmTC_4bdc6 
+/usr/bin/ld: CMakeFiles/cmTC_4bdc6.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x5e): undefined reference to `pthread_cancel'
+/usr/bin/ld: src.c:(.text+0x6f): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_4bdc6.dir/build.make:107: cmTC_4bdc6] Fehler 1
+make[1]: Verzeichnis „/home/nicholas/CLionProjects/untitled/cmake-build-debug/CMakeFiles/CMakeTmp“ wird verlassen
+make: *** [Makefile:141: cmTC_4bdc6/fast] Fehler 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/nicholas/CLionProjects/untitled/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bc495/fast && /usr/bin/make  -f CMakeFiles/cmTC_bc495.dir/build.make CMakeFiles/cmTC_bc495.dir/build
+make[1]: Verzeichnis „/home/nicholas/CLionProjects/untitled/cmake-build-debug/CMakeFiles/CMakeTmp“ wird betreten
+Building C object CMakeFiles/cmTC_bc495.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_bc495.dir/CheckFunctionExists.c.o   -c /home/nicholas/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/bin/cmake/linux/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_bc495
+/home/nicholas/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.6682.181/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bc495.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_bc495.dir/CheckFunctionExists.c.o  -o cmTC_bc495  -lpthreads 
+/usr/bin/ld: -lpthreads kann nicht gefunden werden
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_bc495.dir/build.make:107: cmTC_bc495] Fehler 1
+make[1]: Verzeichnis „/home/nicholas/CLionProjects/untitled/cmake-build-debug/CMakeFiles/CMakeTmp“ wird verlassen
+make: *** [Makefile:141: cmTC_bc495/fast] Fehler 2
+
+
+

@@ -1,5 +1,5 @@
 #include <iostream>
-#include <CL/cl.h>
+#include <CL/cl.h> //TODO Test
 
 bool checkIfEqual(int a, int b, int c, int d, int e, int f, int g, int h){
     int elements [8] = {};

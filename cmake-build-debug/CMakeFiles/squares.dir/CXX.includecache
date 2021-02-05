@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/nicholas/CLionProjects/untitled/main.cpp
+/home/nicholas/magic-squares-opencl/main.cpp
 iostream
 -
-vector
+CL/cl.h
 -
 

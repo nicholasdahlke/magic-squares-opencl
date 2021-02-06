@@ -93,6 +93,14 @@ int main(){
     }
     cl::Platform default_platform=all_platforms[0];
     std::cout << "Using platform " << default_platform.getInfo<CL_PLATFORM_NAME>() << std::endl;
+    std::vector<cl::Device> all_devices;
+    default_platform.getDevices(CL_DEVICE_TYPE_ALL, &all_devices);
+    if (all_devices.size()==0){
+        std::cout << " No devices found check OpenCL installation!\n";
+        return 1;
+    }
+    cl::Device default_device = all_devices[0];
+    std::cout << "Using device: " << default_device.getInfo<CL_DEVICE_NAME>() << std::endl;
     //generateNumbers(10,1);
     return 0;
 }

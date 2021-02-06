@@ -1,9 +1,6 @@
 #include <iostream> //iostream library for output
-#include <CL/cl.h> //includes the opencl library
+#include <CL/cl.hpp> //includes the opencl library
 #include <vector> //Inclue the c++ library for vectors
-int getOpenClPlatforms(){
-
-}
 
 bool checkIfEqual(int a, int b, int c, int d, int e, int f, int g, int h){   //Function to check if 9  Integers are equal
     int elements [8] = {}; //Initializes the array that contains the 9 Numbers
@@ -88,6 +85,14 @@ void generateNumbers(int max, int start){
 }
 
 int main(){
-    generateNumbers(10,1);
+    std::vector<cl::Platform> all_platforms;
+    cl::Platform::get(&all_platforms);
+    if (all_platforms.size()==0){
+        std::cout << "No platforms found. Check OpenCL Installation \n";
+        return 1;
+    }
+    cl::Platform default_platform=all_platforms[0];
+    std::cout << "Using platform " << default_platform.getInfo<CL_PLATFORM_NAME>() << std::endl;
+    //generateNumbers(10,1);
     return 0;
 }

@@ -9,6 +9,8 @@
 /home/nicholas/magic-squares-opencl/main.cpp
 iostream
 -
-CL/cl.h
+CL/cl.hpp
+-
+vector
 -
 

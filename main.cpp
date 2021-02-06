@@ -11,13 +11,13 @@ bool checkIfEqual(int a, int b, int c, int d, int e, int f, int g, int h){   //F
     elements[5] = f;
     elements[6] = g;
     elements[7] = h;
-    for (int i = 0; i <8; ++i) {  //s th
+    for (int i = 0; i <8; ++i) {  //checks if the elements 1 to 8 are equal to any other element
         for (int j = 0; j < 8; ++j) {
-            if (elements[i] != elements[j])return false;
+            if (elements[i] != elements[j])return false;  //Returns false if any elements aren't equal
 
         }
     }
-    return true;
+    return true; //returns true if all elements are equal
 }
 
 int showSquare(int a, int b, int c,int d, int e, int f, int g, int h, int i){

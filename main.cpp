@@ -101,6 +101,7 @@ int main(){
     }
     cl::Device default_device = all_devices[0];
     std::cout << "Using device: " << default_device.getInfo<CL_DEVICE_NAME>() << std::endl;
+    cl::Context context({default_device});
     //generateNumbers(10,1);
     return 0;
 }

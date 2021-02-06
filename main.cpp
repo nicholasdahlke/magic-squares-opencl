@@ -1,17 +1,17 @@
-#include <iostream>
-#include <CL/cl.h> //TODO Test
+#include <iostream> //iostream library for output
+#include <CL/cl.h> //includes the opencl library
 
-bool checkIfEqual(int a, int b, int c, int d, int e, int f, int g, int h){
-    int elements [8] = {};
-    elements[0] = a;
-    elements[1] = b;
+bool checkIfEqual(int a, int b, int c, int d, int e, int f, int g, int h){   //Function to check if 9  Integers are equal
+    int elements [8] = {}; //Initializes the array that contains the 9 Numbers
+    elements[0] = a;  //Writes every argument into the array
+    elements[1] = b; //Loops through the numbers
     elements[2] = c;
     elements[3] = d;
     elements[4] = e;
     elements[5] = f;
     elements[6] = g;
     elements[7] = h;
-    for (int i = 0; i <8; ++i) {
+    for (int i = 0; i <8; ++i) {  //s th
         for (int j = 0; j < 8; ++j) {
             if (elements[i] != elements[j])return false;
 

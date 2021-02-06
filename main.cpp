@@ -1,5 +1,9 @@
 #include <iostream> //iostream library for output
 #include <CL/cl.h> //includes the opencl library
+#include <vector> //Inclue the c++ library for vectors
+int getOpenClPlatforms(){
+
+}
 
 bool checkIfEqual(int a, int b, int c, int d, int e, int f, int g, int h){   //Function to check if 9  Integers are equal
     int elements [8] = {}; //Initializes the array that contains the 9 Numbers

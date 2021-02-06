@@ -86,7 +86,7 @@ void generateNumbers(int max, int start){
     }
 }
 
-int main()
+int main(){
     //generateNumbers(10,1);
     return 0;
 }

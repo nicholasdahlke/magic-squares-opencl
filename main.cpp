@@ -3,6 +3,8 @@
 #include <vector> //Inclue the c++ library for vectors
 #include <string> //Include C++ Library for Strings
 #define OPENCL_ERROR 2
+#define SUCCES 0
+#define ERROR 1
 
 bool checkIfEqual(int a, int b, int c, int d, int e, int f, int g, int h){   //Function to check if 9  Integers are equal
     int elements [8] = {}; //Initializes the array that contains the 9 Numbers
@@ -44,11 +46,11 @@ int showSquare(int a, int b, int c,int d, int e, int f, int g, int h, int i){
 
     if (checkIfEqual(sumA,sumB,sumC,sumD,sumE,sumF,sumG,sumH)){
     std::cout << "Magic square" << std::endl;
-        return 0;
+        return SUCCES;
 }
     else {
         std::cout << "Parker square" << std::endl;
-        return 1;
+        return ERROR;
 }
 }
 
@@ -88,5 +90,5 @@ void generateNumbers(int max, int start){
 
 int main(){
     //generateNumbers(10,1);
-    return 0;
+    return SUCCES;
 }

@@ -89,6 +89,6 @@ void generateNumbers(int max, int start){
 }
 
 int main(){
-    //generateNumbers(10,1);
+    generateNumbers(10,1);
     return SUCCES;
 }
